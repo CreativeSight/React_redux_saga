@@ -12,7 +12,7 @@ export const getSortedData = (state) => {
                  }
             }
           })
-console.log(concatUsers)
+
         //Merge duplicated objects
         const result = concatUsers.reduce((result, item) => {
             const existing = result.find(x => x.word === item.word);
@@ -25,11 +25,11 @@ console.log(concatUsers)
             
             return result;
           }, []);
-console.log(result)
+
         //Sort object stats
         let sortedData = result.sort((a, b) => {
           return b.stats - a.stats;
         });
-    console.log("sortuj", sortedData)
+
     return sortedData;
   };
